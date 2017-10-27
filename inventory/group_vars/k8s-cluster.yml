@@ -23,7 +23,7 @@ kube_users_dir: "{{ kube_config_dir }}/users"
 kube_api_anonymous_auth: false
 
 ## Change this to use another Kubernetes version, e.g. a current beta release
-kube_version: v1.8.1
+kube_version: v1.6.1
 
 # Where the binaries will be downloaded.
 # Note: ensure that you've enough disk space (about 1G)
@@ -136,7 +136,8 @@ docker_bin_dir: "/usr/bin"
 
 # Settings for containerized control plane (etcd/kubelet/secrets)
 etcd_deployment_type: docker
-kubelet_deployment_type: host
+kubelet_deployment_type: docker
+cert_management: script
 vault_deployment_type: docker
 
 # K8s image pull policy (imagePullPolicy)
@@ -173,4 +174,4 @@ istio_enabled: false
 
 ## Supplementary addresses that can be added in kubernetes ssl keys.
 ## That can be usefull for example to setup a keepalived virtual IP
-# supplementary_addresses_in_ssl_keys: [10.0.0.1, 10.0.0.2, 10.0.0.3]
+supplementary_addresses_in_ssl_keys: [5.172.40.20]
