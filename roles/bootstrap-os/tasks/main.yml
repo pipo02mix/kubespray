@@ -26,4 +26,3 @@
 - name: Assign inventory name to unconfigured hostnames
   hostname:
     name: "{{inventory_hostname}}"
-  when: ansible_hostname == 'localhost'
